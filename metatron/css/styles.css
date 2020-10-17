@@ -1,0 +1,697 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project: Gravity
+Version: 1.0
+Last change: 05/09/15 [first release]
+Primary use: App & Mobile Website
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Utility
+2. Base Elements
+3. Page Transition
+4. Layout
+	4.1. Grid
+	4.2. Header
+	4.3. Drawer
+5. Elements
+	5.1.Accordion
+	5.2.Progress Bar
+	5.3.Card
+	5.4.Table
+	5.5.Searchbar
+	5.6.Badge
+	5.7.Tab
+6. Page Specific
+	6.1.Home
+	6.2.Gallery
+	6.3.Blog
+	6.4.Article
+	6.5.Player
+	6.6.Profile
+	6.7.Login
+	6.8.Messages
+	6.9.Settings
+	6.10.Calendar
+-------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------
+1. UTILITY
+-------------------------------------------------------------------*/
+* { margin: 0; padding: 0; }
+	img { max-width: 100%; }
+	.cycle-slideshow {
+		width: 100%;
+		height: 100%;
+		max-width: 1400px;
+		display: block;
+		position: relative;
+		margin: 0px auto;
+		overflow: hidden;
+	}
+	.cycle-prev, .cycle-next {
+		font-size: 200%;
+		color: #fff;
+		display: block;
+		position: absolute;
+		top: 50%;
+		z-index: 9999;
+		cursor: pointer;
+		margin-top: -16px;
+	}
+	.cycle-prev { left: 42px; }
+	.cycle-next { right: 62px; }
+	.cycle-pager {
+		position: absolute;
+		width: 100%;
+		height: 10px;
+		bottom: 10px;
+		z-index: 9999;
+		text-align: center;
+	}
+	.cycle-pager span {
+		text-indent: 100%;
+		top: 100px;
+		width: 10px;
+		height: 10px;
+		display: inline-block;
+		border: 1px solid #fff;
+		border-radius: 50%;
+		margin: 0 px;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+	.cycle-pager-active { background-color: #fff; }
+
+
+.valign-wrapper {
+    display: table;
+}
+.valign-wrapper .valign {
+    display: table-cell;
+    vertical-align: middle;
+}
+.clr {
+	clear: both;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.transparent-header {
+	background-color: transparent;
+	position: absolute;
+	box-shadow: none;
+}
+.no-accent-color {
+	color: rgba(0,0,0,.54);
+}
+.minilogo {
+    width: 44px;
+    height: 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 44px;
+    border-radius: 22px;
+    background-color: #F5F5F5;
+    margin-right: px;
+    float: left;
+}
+.user1 {
+	background-image: url('../img/user1.jpg');
+}
+.user2 {
+	background-image: url('../img/user2.jpg');
+}
+.user3 {
+	background-image: url('../img/user3.jpg');
+}
+.user4 {
+	background-image: url('../img/user4.jpg');
+}
+.user5 {
+	background-image: url('../img/user5.jpg');
+}
+.userx {
+	background-image: url('../img/sub-user.jpg');
+}
+
+.admin {
+	background-image: url('../img/davidprasetyo.png');
+}
+
+/*------------------------------------------------------------------
+2. BASE ELEMENTS
+-------------------------------------------------------------------*/
+
+a {
+	text-decoration: none;
+}
+img{
+
+	height: auto;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+header {
+	color: #ffffff !important;
+}
+header a button i {
+	color: #fff;
+}
+header .mdl-layout__header-row button {
+	margin-left: 8px;
+}
+.mdl-menu a li {
+	color: rgba(0,0,0,.54);
+}
+.mdl-layout__container {
+    position: relative !important;
+    width: 100% !important;
+    height: 100vh !important;
+}
+.mdl-layout__content {
+	width: 100%;
+}
+.mdl-textfield {
+	width: auto;
+}
+.mdl-layout__header-row .no-accent-color {
+	color: #fff;
+}
+.mdl-layout-title {
+	font-weight: 300;
+}
+
+/*------------------------------------------------------------------
+3. PAGE TRANSITION
+-------------------------------------------------------------------*/
+.animsition, .animsition-overlay {
+	position: static;
+	min-height: 100vh;
+}
+
+/*------------------------------------------------------------------
+4. LAYOUT
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+4.1. GRID
+-------------------------------------------------------------------*/
+.mdl-grid {
+    padding: 8px;
+}
+.mdl-cell {
+	margin: 8px;
+}
+.mdl-cell--4-col {
+    width: calc(33.33333% - 16px);
+}
+.mdl-cell--6-col {
+    width: calc(50% - 16px);
+}
+.mdl-cell--8-col {
+    width: calc(66.66666% - 16px);
+}
+.mdl-cell--12-col {
+	width: calc(100% - 16px);
+}
+
+/*------------------------------------------------------------------
+4.2. HEADER
+-------------------------------------------------------------------*/
+.no-drawer {
+	position: absolute;
+}
+.no-drawer .mdl-layout__header-row {
+	padding-left: 16px;
+}
+.no-drawer .mdl-layout-title {
+	padding-left: 22px;
+}
+
+/*------------------------------------------------------------------
+4.3. DRAWER
+-------------------------------------------------------------------*/
+.mdl-collapse__content .mdl-navigation__link {
+  font-weight: 300;
+}
+#user-menu {
+	position: absolute;
+	right: 16px;
+	bottom: 9px;
+	display: inline-block;
+}
+.user img {
+	border-radius: 100%;
+	width: 64px;
+	margin-bottom: 16px;
+}
+.sub-user {
+	float:right;
+	width:40px;
+	border-radius:100%;
+}
+.user-name {
+	margin-bottom: 2px;
+	font-size: 14px;
+	font-family: 'helvetica';
+	font-weight: 400;
+	display: block;
+
+}
+.user-name2 {
+	margin-bottom: 1px;
+	font-size: 14px;
+	font-family: 'helvetica';
+	font-weight: 400;
+	display: block;
+	padding-left: 178px;
+
+}
+.user-mail {
+	font-size: 14px;
+	font-family: 'Roboto';
+	font-weight: 100;
+	display: table;
+}
+.drawer-separator {
+    height: 1px;
+    background-color: #DCDCDC;
+    margin: 8px 0px;
+}
+.mdl-layout__drawer {
+	border-right: none;
+}
+.drawer-profile {
+	box-shadow: none;
+	width: 100%;
+	border-radius: 0;
+}
+.drawer-profile i {
+	color: #fff;
+}
+.drawer-profile > .mdl-card__title {
+    color: #fff;
+    height: auto;
+    display: block;
+}
+.mdl-layout__drawer .mdl-navigation span {
+	float: left;
+	line-height: 24px;
+}
+.mdl-layout__drawer .mdl-navigation i {
+	float: left;
+	margin-right: 32px;
+}
+.mdl-layout__drawer-button {
+	line-height: 56px;
+	height: 48px;
+}
+.mdl-layout__drawer-button i {
+	height: 32px;
+	line-height: 32px;
+	font-size: 24px;
+}
+
+/*------------------------------------------------------------------
+5. ELEMENTS
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+5.1. ACCORDION
+-------------------------------------------------------------------*/
+.mdl-navigation__link.mdl-collapse__button {
+  cursor: pointer;
+}
+
+.mdl-collapse.mdl-collapse--opened {
+  margin-top: 0;
+}
+
+.mdl-collapse__content .mdl-navigation__link {
+		padding-left: 90px !important;
+}
+
+.mdl-navigation__link.mdl-collapse__button {
+  min-height: 24px;
+}
+
+.mdl-collapse.mdl-collapse--opened + .mdl-collapse.mdl-collapse--opened {
+  border-top: none;
+  margin-top: 0;
+}
+
+.mdl-collapse .mdl-collapse__content-wrapper {
+  overflow: hidden;
+}
+
+.mdl-collapse .mdl-collapse__content {
+  transition-property: margin-top;
+  transition-duration: 0.4s;
+}
+
+.mdl-collapse .mdl-collapse__icon {
+  transition-property: transform;
+  transition-duration: 0.4s;
+  color: rgba(0,0,0,0.3);
+  position: absolute;
+  right: 0;
+  margin-top: 0;
+  margin-right: 20px !important;
+}
+
+.mdl-collapse.mdl-collapse--opened .mdl-collapse__icon {
+  transform: rotate(-180deg);
+}
+
+.mdl-collapse.mdl-collapse--opened .mdl-collapse__content {
+  margin-top: 0 !important;
+}
+
+/*------------------------------------------------------------------
+5.2. PROGRESS BAR
+-------------------------------------------------------------------*/
+.mdl-progress > .progressbar {
+    background-color: rgb(233, 30, 99);
+    z-index: 1;
+    left: 0;
+}
+.mdl-progress > .bufferbar {
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+                      -webkit-linear-gradient(left, rgb(233, 30, 99), rgb(233, 30, 99));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+                      linear-gradient(to right, rgb(233, 30, 99), rgb(233, 30, 99));
+    z-index: 0;
+    left: 0;
+}
+}.mdl-progress: not(.mdl-progress__indeterminate) > .auxbar {
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)),
+                      -webkit-linear-gradient(left, rgb(233, 30, 99), rgb(233, 30, 99));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)),
+                      linear-gradient(to right, rgb(233, 30, 99), rgb(233, 30, 99));
+}
+.mdl-progress.mdl-progress__indeterminate > .bar1, .mdl-progress.mdl-progress__indeterminate > .bar3 {
+    background-color: rgb(233, 30, 99);
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+/*------------------------------------------------------------------
+5.3. CARDS
+-------------------------------------------------------------------*/
+.mdl-card, .mdl-card__title-text, .mdl-card__supporting-text {
+	display: block;
+}
+.mdl-card__title-text {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    display: block;
+}
+.mdl-card__menu {
+	color: #fff;
+}
+.card-author {
+	float:left;
+}
+.card-author span:first-child {
+	display: block;
+	margin-top: 4px;
+}
+.mdl-card {
+	width: 100%;
+    max-width: 100%;
+    min-height: 0;
+}
+.mdl-card__title-text {
+	font-weight: 400;
+}
+.mdl-card__title a {
+	color: #ffffff;
+}
+.mdl-card__supporting-text {
+	width: auto;
+}
+.mdl-card .mdl-button--fab {
+	position: absolute;
+	right: 16px;
+	bottom: -28px;
+}
+.mdl-card__actions .mdl-button {
+	float: right;
+}
+.mdl-card__supporting-text {
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+
+/*------------------------------------------------------------------
+5.4. TABLE
+-------------------------------------------------------------------*/
+.mdl-data-table {
+	width: 100%;
+	display: block;
+}
+thead, tbody, .mdl-data-table__cell--non-numeric {
+	width: 100%;
+}
+
+/*------------------------------------------------------------------
+5.5. SEARCHBAR
+-------------------------------------------------------------------*/
+.mdl-layout__header .mdl-textfield__input {
+	border-color: #ffffff;
+}
+
+/*------------------------------------------------------------------
+5.6. BADGE
+-------------------------------------------------------------------*/
+.mdl-menu .mdl-badge[data-badge]:after {
+	top: 2px;
+	right: 10px;
+	position: absolute;
+}
+.mdl-menu .mdl-badge {
+	margin-right: 0;
+}
+
+/*------------------------------------------------------------------
+5.7. TAB
+-------------------------------------------------------------------*/
+.tab-link {
+    margin: 0;
+    border: none;
+    padding: 0 12px;
+    float: left;
+    position: relative;
+    display: block;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    text-decoration: none;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    overflow: hidden;
+}
+
+/*------------------------------------------------------------------
+6. PAGE SPECIFIC
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+6.1. HOME
+-------------------------------------------------------------------*/
+.launch {
+	background: url(../img/home.jpg) center / cover;
+	height: 100vh;
+	text-align: center;
+}
+.launch h2, .launch span {
+	color: #ffffff;
+
+}
+.launch h2 {
+	margin: 0;
+	font-weight: 100;
+	letter-spacing: 5px;
+}
+.launch span {
+	font-size: 16px;
+	font-weight: 100;
+	letter-spacing: 5px;
+
+}
+
+/*------------------------------------------------------------------
+6.2. GALLERY
+-------------------------------------------------------------------*/
+.mdl-layout__content.gallery-container {
+	margin-bottom: 4px;
+}
+.mdl-grid.gallery {
+    padding: 0 2px;
+}
+.gallery .mdl-cell {
+	margin: 4px 2px 0;
+}
+.gallery.masonry img {
+	margin-bottom: 4px;
+}
+.gallery .mdl-cell--4-col {
+    width: calc(33.33333% - 4px);
+}
+.gallery .mdl-cell--6-col {
+    width: calc(50% - 4px);
+}
+.gallery .mdl-cell--8-col {
+    width: calc(66.66666% - 4px);
+}
+.gallery .mdl-cell--12-col {
+	width: calc(100% - 4px);
+}
+
+/*------------------------------------------------------------------
+6.3. BLOG
+-------------------------------------------------------------------*/
+.load-more {
+	color: #757575;
+	float: right;
+	margin: 16px 16px 32px 0;
+}
+.load-more button {
+	background: #f5f5f5;
+	margin-left: 16px;
+}
+.load-more button i {
+	color: #757575;
+}
+/* bg image */
+.imaged .mdl-card__title {
+	color: #fff;
+	padding: 0;
+	display: block;
+	position: relative;
+}
+.imaged .mdl-card__title img {
+	position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+/* bold text */
+.amazing .mdl-card__title {
+    background-color: #263238;
+    position: relative;
+}
+.amazing h3.quote {
+	margin: 0;
+}
+.amazing h3.quote:before {
+    content: '“';
+}
+.amazing h3.quote:after {
+    content: '“';
+}
+.amazing h3.quote:before, .amazing h3.quote:after  {
+    display: block;
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+
+/*------------------------------------------------------------------
+6.4. ARTICLE
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+6.7. LOGIN
+-------------------------------------------------------------------*/
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+
+.mdl-layout__header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.mdl-layout__drawer-button {
+	color: #ffffff;
+}
+
+}
+
+
+@media (max-width: 839px) and (min-width: 480px) {
+
+.mdl-cell--4-col {
+    width: calc(33.33333% - 16px);
+}
+.gallery .mdl-cell--4-col {
+    width: calc(33.33333% - 4px);
+}
+.gallery .mdl-cell--6-col {
+    width: calc(50% - 4px);
+}
+.gallery .mdl-cell--8-col {
+    width: calc(66.66666% - 4px);
+}
+.gallery .mdl-cell--12-col {
+	width: calc(100% - 4px);
+}
+
+}
+
+
+@media (max-width: 479px) {
+
+.mdl-cell--4-col {
+    width: calc(33.33333% - 16px);
+}
+.gallery .mdl-cell--4-col {
+    width: calc(33.33333% - 4px);
+}
+.gallery .mdl-cell--6-col {
+    width: calc(50% - 4px);
+}
+.gallery .mdl-cell--8-col {
+    width: calc(66.66666% - 4px);
+}
+.gallery .mdl-cell--12-col {
+	width: calc(100% - 4px);
+}
+.jarak {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+}
+
+@media (max-width: 340px) {
+.account-data .mdl-button {
+	float: none;
+	margin-top: 16px;
+}
+}

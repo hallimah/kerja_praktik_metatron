@@ -1,0 +1,47 @@
+@font-face {
+	font-family: 'AvenirLTStd';
+	src:
+		url('AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'), 
+		url('AvenirLTStd-Light.otf') format('opentype'), 
+		url('AvenirLTStd-Light.woff') format('woff'), 
+		url('AvenirLTStd-Light.ttf') format('truetype'), 
+		url('AvenirLTStd-Light.svg#AvenirLTStd-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'AvenirLTStd';
+	src:
+		url('AvenirLTStd-LightOblique.eot?#iefix') format('embedded-opentype'), 
+		url('AvenirLTStd-LightOblique.otf') format('opentype'), 
+		url('AvenirLTStd-LightOblique.woff') format('woff'), 
+		url('AvenirLTStd-LightOblique.ttf') format('truetype'), 
+		url('AvenirLTStd-LightOblique.svg#AvenirLTStd-LightOblique') format('svg');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'AvenirLTStd';
+	src:
+		url('AvenirLTStd-Black.eot?#iefix') format('embedded-opentype'), 
+		url('AvenirLTStd-Black.otf') format('opentype'), 
+		url('AvenirLTStd-Black.woff') format('woff'), 
+		url('AvenirLTStd-Black.ttf') format('truetype'), 
+		url('AvenirLTStd-Black.svg#AvenirLTStd-Black') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'AvenirLTStd';
+	src:
+		url('AvenirLTStd-BlackOblique.eot?#iefix') format('embedded-opentype'), 
+		url('AvenirLTStd-BlackOblique.otf') format('opentype'),	
+		url('AvenirLTStd-BlackOblique.woff') format('woff'), 
+		url('AvenirLTStd-BlackOblique.ttf') format('truetype'), 
+		url('AvenirLTStd-BlackOblique.svg#AvenirLTStd-BlackOblique') format('svg');
+	font-weight: 500;
+	font-style: italic;
+}
